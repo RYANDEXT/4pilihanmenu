@@ -1,0 +1,113 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //Deklarasi Kamus
+    int noMenu;
+    int nilai;
+    int pil,batas,i;
+    int baris,kolom;
+    const int jb = 3;
+    const int jk = 3;
+    int Nilai[jb][jk];
+
+    //Algoritma
+    cout << "Menu Empat Pilihan" << endl;
+    cout << "==========================" << endl;
+    cout << "1. Kondisi" << endl;
+    cout << "2. Looping" << endl;
+    cout << "3. Array" << endl;
+    cout << "4. Keluar Progam (Exit) " << endl;
+    cout << "Masukkan Pilihan Anda (1/2/3/4) : ";
+    cin >> noMenu;
+
+    switch(noMenu){
+        case 1 : {
+                cout << " Program menentukan Golongan Nilai Siswa";
+                cout << " \n Masukkan Nilai Siswa : ";
+                cin >> nilai;
+                if(nilai == 100){
+                cout << "AB";
+                }
+                else if (nilai >= 85 && nilai < 100){
+                cout << "A";
+                }
+                else if (nilai >= 70 && nilai < 85){
+                cout << "B";
+                }
+                else if(nilai >= 60 && nilai < 70){
+                cout << "C";
+                }
+                else if(nilai >= 50 && nilai <= 60){
+                cout << "D";
+                }
+                else if(nilai >= 0 && nilai <= 50){
+                cout << "E";
+                }
+                else{
+                cout << "INPUTAN SALAH";
+                }
+                break;
+        }
+        case 2 : {
+
+
+                cout<<"Masukan Pilihan [1.Ganjil] [2.Genap] : ";
+                cin>>pil;
+                cout<<"Masukan Batas : ";
+                cin>>batas;
+                cout<<endl;
+
+                if (pil==1){
+                cout<<"Deret Bilangan Ganjil"<<endl;
+                for(i=1;i<=batas;i++){
+                    if (i%2!=0)
+                cout<<i<<" ";
+                }
+                }else {
+                cout<<"Deret Bilangan Genap"<<endl;
+                for(i=1;i<=batas;i++){
+                    if (i%2==0)
+                cout<<i<<" ";
+                    }
+                }
+                break;
+        }
+        case 3 : {
+                cout << "INPUT NILAI MAHASISWA" << endl;
+                cout << "=====================" << endl;
+
+
+                for (baris = 0; baris < jb; baris++){
+                    for (kolom = 0;kolom < jk; kolom++){
+                cout << "Masukan Nilai Mahasiswa ke-" << baris+1 << " Nilai Mapel ke-" << kolom+1 << " : " ;
+                cin >> Nilai[baris][kolom];
+                }
+
+                cout << endl;
+
+                    }
+
+                cout << "Daftar Nilai Mahasiswa " << endl;
+                cout << "====================== " << endl;
+
+                for (baris = 0; baris < jb; baris++){
+                cout << "Mahasiswa Ke-" << baris+1 << endl;
+                    for (kolom = 0;kolom < jk; kolom++){
+                cout << "Nilai Mapel " << kolom+1 << " = " << Nilai[baris][kolom] << endl;
+                }
+
+                cout << endl;
+
+            }
+        }
+        case 4 : {
+                cout << "Keluar Progam (Exit)";
+                break;
+        }
+    }
+    cout << endl;
+    return 0;
+}
